@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brat Generator Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="logo">
+          <span class="logo-icon" aria-hidden="true"></span>
+          <div>
+            <p class="logo-title">Brat Generator</p>
+            <p class="logo-subtitle">Toolkit for precision</p>
+          </div>
+        </div>
+        <nav class="main-nav" aria-label="Primary">
+          <a href="#generator">Generator</a>
+          <a href="#process">Process</a>
+          <a href="#features">Features</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <span class="header-status">No watermark • No signup</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <p class="label">LO-FI CANVAS STUDIO</p>
+            <h1 class="hero-title">BRAT CANVAS GENERATOR</h1>
+            <p class="hero-subtitle">
+              Craft lo-fi cover art with instant feedback. Dial in blur, mirror, and
+              analog noise with surgical precision.
+            </p>
+            <div class="hero-tags">
+              <span>Zero dependencies</span>
+              <span>Hi-res PNG output</span>
+              <span>Analog grain engine</span>
+            </div>
+          </div>
+          <div class="hero-panel">
+            <p class="panel-title">Realtime previews</p>
+            <div class="panel-outline-text">
+              <span>OUTLINE MODE</span>
+            </div>
+            <p class="panel-body">
+              Designed for fast iteration with minimal, gallery-grade controls.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="generator" class="generator">
+        <div class="container">
+          <div class="section-heading">
+            <p class="label">BRAT TOOL CORE</p>
+            <h2 class="section-title">INTERACTIVE CANVAS ENGINE</h2>
+          </div>
+          <div class="generator-grid">
+            <div class="canvas-wrap">
+              <canvas id="mainCanvas" width="1200" height="1200"></canvas>
+              <div class="canvas-meta">
+                <span>1200 x 1200 preview</span>
+                <button class="btn" id="downloadBtn">Download PNG</button>
+              </div>
+            </div>
+            <div class="controls">
+              <div class="control-block">
+                <label class="control-label" for="textInput">TEXT INPUT</label>
+                <input
+                  id="textInput"
+                  class="text-input"
+                  type="text"
+                  value="BRAT"
+                  maxlength="18"
+                />
+              </div>
+
+              <div class="control-block">
+                <label class="control-label">PRESETS</label>
+                <div class="preset-row">
+                  <button class="preset-btn" data-preset="scribble">Scribble</button>
+                  <button class="preset-btn" data-preset="brat">Brat</button>
+                  <button class="preset-btn" data-preset="bratwhite">Brat White</button>
+                  <button class="preset-btn" data-preset="album">Album</button>
+                  <button class="preset-btn" data-preset="sweat">Sweat</button>
+                </div>
+              </div>
+
+              <div class="control-block">
+                <label class="control-label">TEXT COLOR</label>
+                <div class="color-row" data-target="text">
+                  <button class="color-gem" style="--gem-color: #000000" data-color="#000000"></button>
+                  <button class="color-gem" style="--gem-color: #ffffff" data-color="#ffffff"></button>
+                  <button class="color-gem" style="--gem-color: #8ACE00" data-color="#8ACE00"></button>
+                  <button class="color-gem" style="--gem-color: #111111" data-color="#111111"></button>
+                </div>
+              </div>
+
+              <div class="control-block">
+                <label class="control-label">BACKGROUND</label>
+                <div class="color-row" data-target="background">
+                  <button class="color-gem" style="--gem-color: #ffffff" data-color="#ffffff"></button>
+                  <button class="color-gem" style="--gem-color: #fafafa" data-color="#fafafa"></button>
+                  <button class="color-gem" style="--gem-color: #f4f4f4" data-color="#f4f4f4"></button>
+                  <button class="color-gem" style="--gem-color: #8ACE00" data-color="#8ACE00"></button>
+                </div>
+              </div>
+
+              <div class="control-block">
+                <label class="control-label" for="fontSize">SIZE</label>
+                <input id="fontSize" class="range" type="range" min="120" max="420" value="280" />
+              </div>
+
+              <div class="control-block">
+                <label class="control-label" for="blurAmount">BLUR</label>
+                <input id="blurAmount" class="range" type="range" min="0" max="12" value="4" />
+              </div>
+
+              <div class="control-block">
+                <label class="control-label" for="noiseAmount">NOISE</label>
+                <input id="noiseAmount" class="range" type="range" min="0" max="20" value="6" />
+              </div>
+
+              <div class="control-block toggles">
+                <label class="toggle">
+                  <input id="mirrorToggle" type="checkbox" />
+                  <span>Mirror</span>
+                </label>
+                <label class="toggle">
+                  <input id="flipToggle" type="checkbox" />
+                  <span>Vertical flip</span>
+                </label>
+              </div>
+              <p class="helper">Export uses 2000px master resolution.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="process" class="process">
+        <div class="container">
+          <div class="section-heading">
+            <p class="label">PROCESS</p>
+            <h2 class="section-title">THE CREATION CYCLE</h2>
+          </div>
+          <div class="process-grid">
+            <div class="process-step">
+              <span class="step-num">01</span>
+              <h3>Input Text</h3>
+            </div>
+            <div class="process-step">
+              <span class="step-num">02</span>
+              <h3>Select Vibe</h3>
+            </div>
+            <div class="process-step">
+              <span class="step-num">03</span>
+              <h3>Custom Colors</h3>
+            </div>
+            <div class="process-step">
+              <span class="step-num">04</span>
+              <h3>Effect Tuning</h3>
+            </div>
+            <div class="process-step">
+              <span class="step-num">05</span>
+              <h3>High-Res Preview</h3>
+            </div>
+            <div class="process-step">
+              <span class="step-num">06</span>
+              <h3>Instant Download</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="features">
+        <div class="container">
+          <div class="section-heading">
+            <p class="label">FEATURES</p>
+            <h2 class="section-title">CAPABILITIES</h2>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <h3>4K Rendering</h3>
+              <p>Pixel-perfect exports for professional use.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Zero Latency</h3>
+              <p>Instant updates powered by native Canvas API.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Analog Grain</h3>
+              <p>Authentic vintage noise for lofi texture.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials">
+        <div class="container">
+          <div class="section-heading">
+            <p class="label">COMMUNITY</p>
+            <h2 class="section-title">COMMUNITY VOICES</h2>
+          </div>
+          <div class="quote-grid">
+            <blockquote>
+              <span class="quote-bar"></span>
+              <p>"The blur and mirror controls feel like studio gear."</p>
+              <cite>@analogphase</cite>
+            </blockquote>
+            <blockquote>
+              <span class="quote-bar"></span>
+              <p>"Exported a 4K sleeve in under a minute."</p>
+              <cite>@lofiworkshop</cite>
+            </blockquote>
+            <blockquote>
+              <span class="quote-bar"></span>
+              <p>"The presets are spot on for quick mood shifts."</p>
+              <cite>@midnighttape</cite>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="faq">
+        <div class="container">
+          <div class="section-heading">
+            <p class="label">SUPPORT</p>
+            <h2 class="section-title">COMMON QUESTIONS</h2>
+          </div>
+          <div class="faq-list">
+            <button class="faq-item" type="button">
+              <span>Is the generator free to use?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-panel">
+              <p>Yes. There are no watermarks, no signups, and zero external trackers.</p>
+            </div>
+            <button class="faq-item" type="button">
+              <span>What export sizes are available?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-panel">
+              <p>Use the download button to export a 2000px PNG for high-res delivery.</p>
+            </div>
+            <button class="faq-item" type="button">
+              <span>Can I customize the noise texture?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-panel">
+              <p>Dial in noise intensity with the noise slider and preview instantly.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="logo">
+            <span class="logo-icon" aria-hidden="true"></span>
+            <div>
+              <p class="logo-title">Brat Generator</p>
+              <p class="logo-subtitle">Toolkit for precision</p>
+            </div>
+          </div>
+          <p class="footer-desc">Lo-fi cover art generator built for clarity and speed.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+          <a href="#">YouTube</a>
+        </div>
+        <div class="footer-legal">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
